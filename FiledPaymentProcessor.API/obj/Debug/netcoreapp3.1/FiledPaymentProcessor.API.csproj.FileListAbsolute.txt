@@ -1,0 +1,15 @@
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\bin\Debug\netcoreapp3.1\FiledPaymentProcessor.API.exe
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\obj\Debug\netcoreapp3.1\FiledPaymentProcessor.API.csprojAssemblyReference.cache
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\obj\Debug\netcoreapp3.1\FiledPaymentProcessor.API.AssemblyInfoInputs.cache
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\obj\Debug\netcoreapp3.1\FiledPaymentProcessor.API.AssemblyInfo.cs
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\obj\Debug\netcoreapp3.1\FiledPaymentProcessor.API.RazorTargetAssemblyInfo.cache
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\obj\Debug\netcoreapp3.1\staticwebassets\FiledPaymentProcessor.API.StaticWebAssets.Manifest.cache
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\obj\Debug\netcoreapp3.1\staticwebassets\FiledPaymentProcessor.API.StaticWebAssets.xml
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.API\obj\Debug\netcoreapp3.1\FiledPaymentProcessor.API.csproj.CopyComplete

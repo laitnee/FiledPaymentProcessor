@@ -1,0 +1,5 @@
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.Data\bin\Debug\netcoreapp3.1\FiledPaymentProcessor.Data.deps.json
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.Data\bin\Debug\netcoreapp3.1\FiledPaymentProcessor.Data.dll
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.Data\obj\Debug\netcoreapp3.1\FiledPaymentProcessor.Data.csprojAssemblyReference.cache
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.Data\obj\Debug\netcoreapp3.1\FiledPaymentProcessor.Data.AssemblyInfoInputs.cache
+C:\Users\Hayub Idowu\source\repos\FiledPaymentProcessor\FiledPaymentProcessor.Data\obj\Debug\netcoreapp3.1\FiledPaymentProcessor.Data.AssemblyInfo.cs
