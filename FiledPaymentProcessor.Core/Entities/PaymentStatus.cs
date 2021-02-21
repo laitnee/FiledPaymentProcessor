@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FiledPaymentProcessor.Core.Entities
 {
-    public class PaymentStatus: BaseEntity
+    public class PaymentStatus : BaseEntity
     {
         public PaymentState State { get; set; }
 

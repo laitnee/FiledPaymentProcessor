@@ -1,10 +1,7 @@
 ﻿using FiledPaymentProcessor.Core.DTOs;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Serilog;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FiledPaymentProcessor.Core.Services.PaymentGateway
@@ -28,7 +25,7 @@ namespace FiledPaymentProcessor.Core.Services.PaymentGateway
                 if (_epService is ExpensivePaymentService)
                 {
                     var retryResult = await RetryPayment(paymentRequest);
-                    if(retryResult == ResultConstants.SUCCESS) return ResultConstants.SUCCESS;
+                    if (retryResult == ResultConstants.SUCCESS) return ResultConstants.SUCCESS;
                 }
                 return ResultConstants.FAILED;
             }

@@ -1,9 +1,6 @@
 ﻿using FiledPaymentProcessor.Core.DTOs;
 using FluentValidation;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FiledPaymentProcessor.Core.Validators
 {
@@ -35,7 +32,7 @@ namespace FiledPaymentProcessor.Core.Validators
 
             RuleFor(pr => pr.CreditCardNumber)
                 .NotNull()
-                .Must( ccn => ValidateCreditCardNumberWithLuhn(ccn)).WithMessage("Credit Card Number is Invalid");
+                .Must(ccn => ValidateCreditCardNumberWithLuhn(ccn)).WithMessage("Credit Card Number is Invalid");
         }
 
         public bool ValidateCreditCardNumberWithLuhn(string ccnString)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FiledPaymentProcessor.Data
 {
-    public class PaymentProcessorContext: DbContext
+    public class PaymentProcessorContext : DbContext
     {
         public PaymentProcessorContext(DbContextOptions options) : base(options)
         {

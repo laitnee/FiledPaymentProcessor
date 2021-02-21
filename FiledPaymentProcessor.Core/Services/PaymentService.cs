@@ -5,9 +5,6 @@ using FiledPaymentProcessor.Core.Repositories;
 using FiledPaymentProcessor.Core.Services.PaymentGateway;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FiledPaymentProcessor.Core.Services
@@ -21,7 +18,7 @@ namespace FiledPaymentProcessor.Core.Services
         public IUnitOfWork _unitOfWork;
         public IMapper _mapper;
         public ILogger<PaymentService> _logger;
-        public PaymentService  (IUnitOfWork unitOfWork, IMapper mapper, ILogger<PaymentService> logger)
+        public PaymentService(IUnitOfWork unitOfWork, IMapper mapper, ILogger<PaymentService> logger)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -42,7 +39,7 @@ namespace FiledPaymentProcessor.Core.Services
             await _unitOfWork.Complete();
 
             decimal amount = req.Amount;
-            if(amount <= CHEAP_PAYMENT_DEFAULT_RANGE)
+            if (amount <= CHEAP_PAYMENT_DEFAULT_RANGE)
             {
                 paymentGateway = new CheapPaymentGateway(new CheapPaymentService());
             }

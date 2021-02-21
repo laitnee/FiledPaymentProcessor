@@ -1,8 +1,5 @@
 ﻿using FiledPaymentProcessor.Core.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FiledPaymentProcessor.Data.Configurations
 {
@@ -13,7 +10,7 @@ namespace FiledPaymentProcessor.Data.Configurations
             entity.HasKey(x => x.Id);
             entity.Property(x => x.Id).ValueGeneratedOnAdd();
 
-            entity.Property(x => x.Id).IsRequired(); 
+            entity.Property(x => x.Id).IsRequired();
             entity.Property(x => x.State).IsRequired();
             entity.Property(x => x.PaymentDetailId).IsRequired();
 

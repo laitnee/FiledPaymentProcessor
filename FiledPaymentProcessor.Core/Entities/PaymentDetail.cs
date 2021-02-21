@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FiledPaymentProcessor.Core.Entities
 {
-    public class PaymentDetail: BaseEntity
+    public class PaymentDetail : BaseEntity
     {
         public string CreditCardNumber { get; set; }
         public string CardHolder { get; set; }

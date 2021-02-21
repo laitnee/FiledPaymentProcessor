@@ -1,9 +1,6 @@
 ﻿using FiledPaymentProcessor.Core.DTOs;
 using Serilog;
-using System;
-using System.Collections.Generic;
 using System.Net;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,30 +13,30 @@ namespace FiledPaymentProcessor.Core.Services.PaymentGateway
 
         public async Task<PaymentResponse> Pay(PaymentRequest req)
         {
-            var result  = await Task.Run(() =>
-               {
-                   PaymentResponse response = null;
-                   int retry = 1;
-                   while (retry <= NO_OF_RETRIES)
-                   {
-                       Log.Logger.Information($"Premium Service Payment retry {retry}");
+            var result = await Task.Run(() =>
+              {
+                  PaymentResponse response = null;
+                  int retry = 1;
+                  while (retry <= NO_OF_RETRIES)
+                  {
+                      Log.Logger.Information($"Premium Service Payment retry {retry}");
 
-                       response = CallPayService(req);
+                      response = CallPayService(req);
 
-                       Log.Logger.Information($"Premium Service Payment response {response}");
+                      Log.Logger.Information($"Premium Service Payment response {response}");
 
-                       if (response != null && response.ResponseCode == System.Net.HttpStatusCode.OK) return response;
-                       retry++;
-                       Thread.Sleep(RETRY_TIME_LAPSE * retry);
-                   }
-                   return response;
-               }
+                      if (response != null && response.ResponseCode == System.Net.HttpStatusCode.OK) return response;
+                      retry++;
+                      Thread.Sleep(RETRY_TIME_LAPSE * retry);
+                  }
+                  return response;
+              }
             );
             return result;
         }
 
         private PaymentResponse CallPayService(PaymentRequest paymentRequest) =>
-         new PaymentResponse { ResponseCode = HttpStatusCode.NotFound, ResponseDescription = "Stubbed Service" }; 
-   
+         new PaymentResponse { ResponseCode = HttpStatusCode.NotFound, ResponseDescription = "Stubbed Service" };
+
     }
 }

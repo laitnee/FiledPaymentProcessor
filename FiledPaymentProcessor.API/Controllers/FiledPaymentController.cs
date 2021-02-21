@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using FiledPaymentProcessor.Core.DTOs;
+﻿using FiledPaymentProcessor.Core.DTOs;
 using FiledPaymentProcessor.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace FiledPaymentProcessor.API.Controllers
 {
@@ -46,7 +43,7 @@ namespace FiledPaymentProcessor.API.Controllers
         [Route("ProcessPayment")]
         public async Task<IActionResult> ProcessPayment([FromBody] PaymentRequest paymentRequest)
         {
-            if(!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid) return BadRequest();
             var response = await _paymentService.ProcessPaymentRequest(paymentRequest);
             if (response != null) return Ok(response);
             return StatusCode(500);

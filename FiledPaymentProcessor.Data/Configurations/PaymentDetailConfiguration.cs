@@ -1,9 +1,5 @@
 ﻿using FiledPaymentProcessor.Core.Entities;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FiledPaymentProcessor.Data.Configurations
 {

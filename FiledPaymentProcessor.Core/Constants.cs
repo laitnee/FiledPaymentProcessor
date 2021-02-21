@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace FiledPaymentProcessor.Core
+﻿namespace FiledPaymentProcessor.Core
 {
     public static class Constants
     {
-        
+
     }
     public static class ResultConstants
     {
