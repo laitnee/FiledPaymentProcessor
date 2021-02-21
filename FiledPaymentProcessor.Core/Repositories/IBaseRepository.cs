@@ -27,8 +27,6 @@ namespace FiledPaymentProcessor.Core.Repositories
         Task<IEnumerable<TEntity>> GetWithRawSql(string query,
         params object[] parameters);
 
-        Task Update(TEntity entity);
-
-        Task SaveAllChangesAsync();
+        void Update(TEntity entity);
     }
 }

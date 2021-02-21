@@ -64,14 +64,7 @@ namespace FiledPaymentProcessor.Data.Repositories
 
         public async Task<IEnumerable<TEntity>> GetWithRawSql(string query, params object[] parameters) => await _dbSet.FromSqlRaw(query, parameters).ToListAsync();
 
-        public async Task Update(TEntity entity)
-        {
-            await Task.Run(() =>
-            {
-                _dbSet.Attach(entity).State = EntityState.Modified;
-            });
-        }
+        public void Update(TEntity entity) => _dbSet.Attach(entity).State = EntityState.Modified;
 
-        public async Task SaveAllChangesAsync() => await _paymentProcessorContext.SaveChangesAsync();
     }
 }

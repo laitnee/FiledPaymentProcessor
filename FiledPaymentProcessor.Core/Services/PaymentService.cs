@@ -56,7 +56,7 @@ namespace FiledPaymentProcessor.Core.Services
             if (!paymentProcessingResult) paymentStatus.State = PaymentState.FAILED;
             else paymentStatus.State = PaymentState.PROCESSED;
 
-            await _unitOfWork.PaymentState.Update(paymentStatus);
+            _unitOfWork.PaymentState.Update(paymentStatus);
             await _unitOfWork.Complete();
 
             var paymentResponse = _mapper.Map<PaymentResponseDTO>(payment);

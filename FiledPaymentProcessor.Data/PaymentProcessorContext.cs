@@ -27,7 +27,7 @@ namespace FiledPaymentProcessor.Data
             return base.SaveChanges();
         }
 
-        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken)
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default
         )
         {
             OnBeforeSaving();
