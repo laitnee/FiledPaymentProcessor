@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FiledPaymentProcessor.API</name>
+    </assembly>
+    <members>
+        <member name="M:FiledPaymentProcessor.API.Controllers.FiledPaymentController.ProcessPayment(FiledPaymentProcessor.Core.DTOs.PaymentRequest)">
+             <summary>
+             Charges a card based on the amount supplied
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /ProcessPayment
+                 {
+                    "CreditCardNumber": "4556031415183354",
+                    "CardHolder": "Jane Doe",
+                    "ExpirationDate": "2021-02-21",
+                    "SecurityCode": "342",
+                    "Amount": 23.44
+                 }
+            
+             </remarks>
+             <param name="PaymentRequest"></param>
+             <returns>A newly created TodoItem</returns>
+             <response code="200">Returns if payment is processed</response>
+             <response code="400">Returns if request body is invalid</response>    
+        </member>
+    </members>
+</doc>
