@@ -18,11 +18,13 @@ namespace FiledPaymentProcessor.Core.Services
         public IUnitOfWork _unitOfWork;
         public IMapper _mapper;
         public ILogger<PaymentService> _logger;
-        public PaymentService(IUnitOfWork unitOfWork, IMapper mapper, ILogger<PaymentService> logger)
+        public IPaymentGatewayFactory _paymentGatewayFactory;
+        public PaymentService(IUnitOfWork unitOfWork, IMapper mapper, ILogger<PaymentService> logger, IPaymentGatewayFactory paymentGatewayFactory)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _logger = logger;
+            _paymentGatewayFactory = paymentGatewayFactory;
         }
         public async Task<PaymentResponseDTO> ProcessPaymentRequest(PaymentRequest req)
         {
@@ -39,19 +41,10 @@ namespace FiledPaymentProcessor.Core.Services
             await _unitOfWork.Complete();
 
             decimal amount = req.Amount;
-            if (amount <= CHEAP_PAYMENT_DEFAULT_RANGE)
-            {
-                paymentGateway = new CheapPaymentGateway(new CheapPaymentService());
-            }
-            if (amount <= EXPENSIVE_PAYMENT_DEFAULT_RANGE)
-            {
-                paymentGateway = new ExpensivePaymentGateway(new ExpensivePaymentService());
-            }
-            if (amount > EXPENSIVE_PAYMENT_DEFAULT_RANGE)
-            {
-                paymentGateway = new ExpensivePaymentGateway(new PremiumPaymentService());
-            }
-
+            if (amount <= CHEAP_PAYMENT_DEFAULT_RANGE) paymentGateway = _paymentGatewayFactory.CreateCheapGatewayCheapService();
+            else if (amount <= EXPENSIVE_PAYMENT_DEFAULT_RANGE) paymentGateway = _paymentGatewayFactory.CreateExpensiveGatewayExpensiveService();
+            else if (amount > EXPENSIVE_PAYMENT_DEFAULT_RANGE) paymentGateway = _paymentGatewayFactory.CreateExpensiveGatewayPremiumService();
+            
             var paymentProcessingResult = await paymentGateway.PaymentProcessor(req);
             if (!paymentProcessingResult) paymentStatus.State = PaymentState.FAILED;
             else paymentStatus.State = PaymentState.PROCESSED;

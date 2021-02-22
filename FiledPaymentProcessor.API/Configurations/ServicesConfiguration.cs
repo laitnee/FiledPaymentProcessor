@@ -1,6 +1,7 @@
 ﻿using FiledPaymentProcessor.Core.MappingProfiles;
 using FiledPaymentProcessor.Core.Repositories;
 using FiledPaymentProcessor.Core.Services;
+using FiledPaymentProcessor.Core.Services.PaymentGateway;
 using FiledPaymentProcessor.Data.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,6 +14,7 @@ namespace FiledPaymentProcessor.API.Configurations
             services.AddTransient<IPaymentDetailRepository, PaymentDetailRepository>();
             services.AddTransient<IPaymentStatusRepository, PaymentStatusRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IPaymentGatewayFactory, PaymentGatewayFactory>();
             services.AddTransient<IPaymentService, PaymentService>();
         }
 
